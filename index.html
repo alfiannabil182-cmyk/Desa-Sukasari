@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f5ee">
+    <meta name="description" content="Temukan produk dan karya UMKM warga Desa Sukasari, Purwakarta.">
+    <title>Sukasari Lokal — Cerita dan Karya dari Desa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="customer-site">
+    <div id="admin-preview-bar" class="admin-preview-bar" hidden>
+        <span>Mode admin · Sunting menu langsung di website</span>
+        <div>
+            <button id="btn-open-account-settings" type="button">Ubah akun</button>
+            <button id="btn-exit-preview" type="button">Keluar admin</button>
+        </div>
+    </div>
+    <header class="site-header">
+        <a class="brand" href="#beranda" aria-label="Sukasari Lokal, beranda">
+            <span class="brand-mark" aria-hidden="true">s.</span>
+            <span class="brand-copy"><strong data-site-key="brandName">Sukasari Lokal</strong><small data-site-key="brandSubtitle">Purwakarta · Jawa Barat</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Navigasi utama">
+            <a href="#koleksi" data-site-key="navCatalog">Koleksi</a>
+            <a href="#lokasi" data-site-key="navLocation">Lokasi</a>
+        </nav>
+        <button id="btn-edit-menu" class="btn-admin btn-edit-menu" type="button" hidden>Sunting</button>
+        <button id="btn-login-trigger" class="btn-admin" type="button"><span aria-hidden="true">♧</span> Admin</button>
+    </header>
+
+    <main>
+        <section class="hero-section" id="beranda">
+            <div class="hero-photo" aria-hidden="true"></div>
+            <div class="hero-shade" aria-hidden="true"></div>
+            <div class="hero-content">
+                <span class="eyebrow hero-eyebrow"><span></span><span data-site-key="heroEyebrow">DARI TANGAN WARGA SUKASARI</span></span>
+                <h1><span data-site-key="heroTitleLine1">Yang baik,</span><br><em data-site-key="heroTitleLine2">tumbuh dari desa.</em></h1>
+                <p data-site-key="heroDescription">Temukan rasa, karya, dan cerita dari UMKM warga Sukasari, Purwakarta. Dibuat dengan sepenuh hati, untuk dinikmati lebih dekat.</p>
+                <a class="hero-cta" href="#koleksi"><span data-site-key="heroCta">Jelajahi karya warga</span><span aria-hidden="true">↘</span></a>
+            </div>
+            <div class="hero-caption"><span>01 / 03</span><span class="caption-line"></span><span data-site-key="heroCaption">BUATAN LOKAL, CERITANYA PERSONAL</span></div>
+            <div class="hero-seal" aria-hidden="true"><span data-site-key="sealTop">DARI</span><strong data-site-key="sealTitle">DESA</strong><span data-site-key="sealBottom">♡ DENGAN HATI</span></div>
+        </section>
+
+        <section class="intro-strip" aria-label="Tentang etalase">
+            <p><span class="intro-star">✳</span> <span data-site-key="introMessage">Mendukung usaha kecil, merayakan hal-hal besar.</span></p>
+            <span class="intro-place" data-site-key="introPlace">SUKASARI · PURWAKARTA</span>
+        </section>
+
+        <section class="catalog-section section-wrap" id="koleksi">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow" data-site-key="catalogEyebrow">PILIHAN DARI DESA</span>
+                    <div class="catalog-title-row">
+                        <h2><span data-site-key="catalogTitle">Etalase warga</span><span>.</span></h2>
+                        <button id="btn-add-category" class="btn-add-category" type="button" hidden>+ Tambahkan menu</button>
+                    </div>
+                    <p data-site-key="catalogDescription">Setiap produk punya kisah. Temukan yang cocok untukmu.</p>
+                </div>
+                <label class="search-wrap" for="search-input"><span aria-hidden="true">⌕</span><input type="search" id="search-input" data-site-placeholder="searchPlaceholder" placeholder="Cari produk atau cerita..." autocomplete="off"></label>
+            </div>
+            <nav class="category-menu" id="category-menu" aria-label="Filter kategori"></nav>
+            <div id="product-grid" class="product-grid" aria-live="polite"></div>
+        </section>
+
+        <section class="location-section" id="lokasi">
+            <div class="location-copy">
+                <span class="eyebrow" data-site-key="locationEyebrow">BERKUNJUNG KE SUKASARI</span>
+                <h2><span data-site-key="locationTitleLine1">Temukan kami</span><br><em data-site-key="locationTitleLine2">di sekitar sini.</em></h2>
+                <p id="location-address">Sukasari, Purwakarta, Jawa Barat</p>
+                <a id="directions-link" class="directions-link" href="https://www.google.com/maps/search/?api=1&query=Sukasari%2C%20Purwakarta%2C%20Jawa%20Barat" target="_blank" rel="noopener noreferrer"><span data-site-key="directionsLabel">Buka petunjuk arah</span><span aria-hidden="true">↗</span></a>
+                <span class="location-note" data-site-key="locationNote">Lokasi dapat diperbarui oleh admin agar lebih tepat.</span>
+            </div>
+            <div class="map-frame-wrap">
+                <iframe id="location-map" title="Peta lokasi UMKM Sukasari, Purwakarta" src="https://maps.google.com/maps?q=Sukasari%2C%20Purwakarta%2C%20Jawa%20Barat&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <span class="map-tag"><span aria-hidden="true">⌖</span> SUKASARI, PURWAKARTA</span>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"><a class="footer-brand" href="#beranda"><span data-site-key="footerBrand">Sukasari Lokal</span><span>.</span></a><p data-site-key="footerMessage">Merawat cerita, menguatkan usaha warga.</p><span>© <span id="year"></span> <span data-site-key="footerCopyright">UMKM Desa Sukasari</span></span></footer>
+    </div>
+
+    <div id="login-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="login-title">
+        <div class="modal-content login-box">
+            <button class="close-btn" type="button" data-close="login-modal" aria-label="Tutup">&times;</button>
+            <span class="eyebrow">AREA PENGELOLA</span>
+            <h2 id="login-title">Selamat datang,<br>Admin.</h2>
+            <p class="modal-intro">Masuk untuk mengelola produk dan informasi lokasi etalase.</p>
+            <form id="login-form">
+                <label for="username">Username</label><input type="text" id="username" placeholder="Username" autocomplete="username" required>
+                <label for="password">Password</label><input type="password" id="password" placeholder="Password" autocomplete="current-password" required>
+                <button type="submit" class="btn-primary">Masuk ke dashboard <span aria-hidden="true">→</span></button>
+            </form>
+        </div>
+    </div>
+
+    <section id="admin-modal" class="admin-page" aria-labelledby="admin-title">
+        <header class="admin-page-header">
+            <a class="admin-page-brand" href="#">Sukasari Lokal <span>· Admin</span></a>
+            <button type="button" id="btn-exit-admin" class="btn-admin">Tutup</button>
+        </header>
+        <div class="modal-content admin-box">
+            <span class="eyebrow">ETALASE WARGA</span>
+            <h2 id="admin-title">Tambahkan menu</h2>
+            <p class="modal-intro">Tambahkan produk baru agar tampil di etalase warga.</p>
+
+            <section class="admin-section add-category-section">
+                <h3>Tambahkan menu UMKM</h3>
+                <p class="admin-help">Menu baru akan muncul sebagai pilihan kategori di etalase warga.</p>
+                <form id="add-category-form">
+                    <label for="new-category-name">Nama menu</label>
+                    <input type="text" id="new-category-name" maxlength="40" placeholder="Contoh: Makanan, Kerajinan" required>
+                    <button type="submit" class="btn-primary">Tambahkan menu</button>
+                </form>
+                <div id="custom-category-list" class="custom-category-list"></div>
+            </section>
+            <section class="admin-section site-editor-section">
+                <h3>Konten, menu & tampilan</h3>
+                <p class="admin-help">Ubah tulisan yang tampil di website dan sesuaikan warna temanya.</p>
+                <div id="site-content-fields" class="site-content-fields"></div>
+                <div class="theme-color-grid">
+                    <label for="theme-forest">Warna utama<input type="color" id="theme-forest" value="#263f34"></label>
+                    <label for="theme-clay">Warna aksen<input type="color" id="theme-clay" value="#bd8159"></label>
+                    <label for="theme-cream">Warna latar<input type="color" id="theme-cream" value="#f7f5ee"></label>
+                </div>
+                <button type="button" id="btn-save-site-content" class="btn-primary">Simpan konten & tampilan</button>
+                <button type="button" id="btn-reset-site-content" class="btn-cancel-edit">Kembalikan teks dan warna awal</button>
+            </section>
+
+            <div class="admin-divider"></div>
+            <section class="admin-section">
+                <h3>Lokasi etalase</h3>
+                <label for="admin-location">Alamat untuk peta <small>Isi alamat atau nama tempat yang mudah dicari di peta.</small></label>
+                <input type="text" id="admin-location" maxlength="180" placeholder="Sukasari, Purwakarta, Jawa Barat">
+                <button type="button" id="btn-save-settings" class="btn-primary">Simpan lokasi</button>
+            </section>
+
+            <div class="admin-divider"></div>
+            <section class="admin-section product-admin-section">
+                <h3 id="product-form-title">Tambah produk</h3>
+                <p class="admin-help">Produk dan pengaturan tersimpan di browser ini. Sinkronisasi antarperangkat memerlukan backend/database.</p>
+                <form id="admin-form">
+                    <label for="prod-name">Nama produk</label><input type="text" id="prod-name" placeholder="Contoh: Keripik singkong Bu Tini" required>
+                    <label for="prod-category">Kategori</label><input type="text" id="prod-category" placeholder="Contoh: Kuliner, Kerajinan" maxlength="40" required>
+                    <label for="prod-price">Harga (rupiah)</label><input type="number" id="prod-price" placeholder="Contoh: 25000" min="1" required>
+                    <label for="prod-wa">Nomor WhatsApp pemesanan <small>Gunakan kode negara tanpa tanda +, contoh 6281234567890.</small></label>
+                    <input type="tel" id="prod-wa" inputmode="numeric" maxlength="20" placeholder="6281234567890" required>
+                    <label class="upload-label" for="prod-img">Foto atau video produk <small>Pilih foto (maks. 6 MB) atau video (maks. 2 MB).</small></label>
+                    <input type="file" id="prod-img" accept="image/*,video/*" aria-describedby="image-help">
+                    <small id="image-help" class="field-help">Foto akan dioptimalkan sebelum disimpan. Video disimpan sebagai pratinjau di etalase.</small>
+                    <img id="image-preview" class="image-preview" alt="Pratinjau foto produk" hidden>
+                    <video id="video-preview" class="image-preview video-preview" controls playsinline hidden></video>
+                    <label for="prod-desc">Cerita singkat produk</label><textarea id="prod-desc" placeholder="Ceritakan keunikan dan keunggulan produk..." required></textarea>
+                    <button type="submit" class="btn-primary" id="btn-submit-product">Tambah produk</button>
+                    <button type="button" class="btn-cancel-edit" id="btn-cancel-edit" hidden>Batal edit</button>
+                </form>
+            </section>
+            <div class="admin-divider"></div>
+            <div id="admin-product-list"></div>
+        </div>
+    </section>
+
+    <section id="account-modal" class="admin-page" aria-labelledby="account-title">
+        <header class="admin-page-header">
+            <a class="admin-page-brand" href="#">Sukasari Lokal <span>· Akun admin</span></a>
+            <button type="button" id="btn-exit-account" class="btn-admin">Kembali</button>
+        </header>
+        <div class="modal-content account-box">
+            <span class="eyebrow">PENGATURAN AKUN</span>
+            <h2 id="account-title">Ubah akun admin</h2>
+            <p class="modal-intro">Perubahan akun hanya tersimpan di browser ini dan bukan perlindungan aman untuk website publik.</p>
+            <section class="admin-section account-settings-section">
+                <form id="credentials-form">
+                    <label for="current-admin-password">Password saat ini</label>
+                    <input type="password" id="current-admin-password" autocomplete="current-password" required>
+                    <label for="new-admin-username">Username baru</label>
+                    <input type="text" id="new-admin-username" maxlength="40" autocomplete="username" required>
+                    <label for="new-admin-password">Password baru <small>Minimal 5 karakter.</small></label>
+                    <input type="password" id="new-admin-password" minlength="5" maxlength="128" autocomplete="new-password" required>
+                    <label for="confirm-admin-password">Ulangi password baru</label>
+                    <input type="password" id="confirm-admin-password" minlength="5" maxlength="128" autocomplete="new-password" required>
+                    <button type="submit" class="btn-primary">Simpan username &amp; password</button>
+                </form>
+            </section>
+        </div>
+    </section>
+
+    <div id="image-modal" class="image-modal" role="dialog" aria-modal="true" aria-label="Foto produk ukuran penuh">
+        <button type="button" id="image-modal-close" class="image-modal-close" aria-label="Tutup foto">&times;</button>
+        <img id="full-product-image" alt="">
+    </div>
+    <div id="toast-container" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
+</html>
