@@ -714,11 +714,14 @@ inputFoto.addEventListener('change', () => {
     pratinjauVideo.hidden = true;
     const file = inputFoto.files[0];
     if (!file) return;
+    const ekstensi = file.name.split('.').pop().toLocaleLowerCase('id');
     const adalahVideo = file.type.startsWith('video/');
+    const adalahJpeg = ['jpg', 'jpeg'].includes(ekstensi);
+    const adalahFoto = file.type.startsWith('image/') || adalahJpeg;
     const ukuranMaksimum = (adalahVideo ? 2 : 6) * 1024 * 1024;
-    if ((!file.type.startsWith('image/') && !adalahVideo) || file.size > ukuranMaksimum) {
+    if ((!adalahFoto && !adalahVideo) || file.size > ukuranMaksimum) {
         inputFoto.value = '';
-        tampilkanToast(adalahVideo ? 'Ukuran video maksimal 2 MB.' : 'Pilih foto dengan ukuran maksimal 6 MB.', 'error');
+        tampilkanToast(adalahVideo ? 'Ukuran video maksimal 2 MB.' : 'Pilih foto JPG/JPEG atau format gambar lain dengan ukuran maksimal 6 MB.', 'error');
         return;
     }
     urlPratinjau = URL.createObjectURL(file);
